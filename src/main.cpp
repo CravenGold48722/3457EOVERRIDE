@@ -135,8 +135,8 @@ void pre_auton() {
   LeftBack.setVelocity(55, pct);
   RightBack.setVelocity(55, pct);
   ClawToggled = true;
-  ClawMotor1.setPosition(0, deg);
-  closeClaw();
+  // ClawMotor1.setPosition(0, deg);
+  // closeClaw();
 }
 
 /**
@@ -160,14 +160,14 @@ void autonomous(void) {
 /*                                                                           */
 /*  You must modify the code to add your own robot specific commands here.   */
 /*---------------------------------------------------------------------------*/
-void toggleClaw() {
-  ClawToggled = !ClawToggled;
-  if (ClawToggled == true) {
-    closeClaw();
-  } else if (ClawToggled == false) {
-    openClaw();
-  }
-}
+// void toggleClaw() {
+//   ClawToggled = !ClawToggled;
+//   if (ClawToggled == true) {
+//     closeClaw();
+//   } else if (ClawToggled == false) {
+//     openClaw();
+//   }
+// }
 void toggleLiftSpeed() {
   lift_slowed = !lift_slowed;
   if (lift_slowed) {
@@ -185,9 +185,7 @@ void toggleLiftSpeed() {
 void usercontrol(void) {
   // User control code here, inside the loop
   // once you get motors, set stopping to whatever is necesarry(coast, brake, or hold)
-  Controller.ButtonL1.pressed(toggleClaw);
-  Controller.ButtonL2.pressed(toggleIntaking);
-  Controller.ButtonB.pressed(toggleAKIntaking);
+  // Controller.ButtonB.pressed(toggleClaw);
   Controller.ButtonY.pressed(toggleLiftSpeed);
   while (1) {
     // LeftLift.setStopping(hold); 
